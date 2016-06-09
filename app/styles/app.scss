@@ -1,0 +1,68 @@
+@import "bootstrap";
+
+body {
+
+  padding-top: 20px;
+
+}
+
+img {
+
+  border-radius: 50%;
+  height: 130px;
+  width: 130px;
+
+}
+
+body { 
+
+  background-image: url("http://franklysouthern.com/wp-content/uploads/2013/12/WW.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  color: white; 
+  background-size: cover;
+  background-attachment: fixed; 
+}
+
+
+
+.list-group-item {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid black;
+  color: red; 
+  background-image: url("https://s-media-cache-ak0.pinimg.com/736x/3a/ea/0a/3aea0a0dc0ff985cf49cecfec5393712.jpg");
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size: 70%; 
+  text-align: center;
+  margin: 0;
+}
+
+#search {
+  color: red;
+}
+
+@keyframes circle {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+@keyframes inner-circle {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(-360deg); }
+}
+
+#outerDiv {
+    width:100px;
+    height:100px;
+    margin: 20px auto 0;
+    color:orange;
+    font-size:100px;
+    line-height:1;
+    animation: circle 5s linear infinite;
+    transform-origin:50% 50px;
+}
+
+#innerDiv {
+    animation: inner-circle 5s linear infinite;
+}

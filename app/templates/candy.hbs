@@ -1,0 +1,24 @@
+<h2>The Candy Shop</h2>
+
+<div id="search">
+
+  {{filter-candy filteredList=filteredList 
+  autoComplete=(action 'autoComplete') search=(action 'search')}}
+
+</div>
+
+<ul class="list-group">
+
+  {{#each model as |candyItem|}}
+
+    <li class="list-group-item">
+      
+      {{candy-listing candy=candyItem}}
+
+    </li>
+
+  {{/each}}
+
+</ul>
+
+

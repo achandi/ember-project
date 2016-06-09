@@ -1,0 +1,25 @@
+<h3> Type: {{candy.title}} </h3>
+<h3> price: ${{candy.price}} </h3>
+<h3> description: {{candy.description}} </h3>
+<h3> Likes: {{candy.likes}} </h3>
+<h3> Dislikes: {{candy.dislikes}} </h3>
+<h3> Quantity: {{candy.quantity}} </h3>
+{{input value=quantitySold}}
+<button {{action 'addToCart' quantitySold}}>add to cart</button>
+
+<button {{action 'increaseLike'}}>Like</button>
+<button {{action 'unLike'}}>Unlike</button>
+
+{{#if showImageCover }}
+  <div id="outerDiv">
+    <div id="innerDiv">
+      <p><img src={{candy.cover}}></p>
+    </div>
+  </div>
+  <button {{action 'hideImage'}}>Hide image</button>
+{{else}}
+  <button {{action 'showImage'}}>Show image</button>
+{{/if}}
+
+
+

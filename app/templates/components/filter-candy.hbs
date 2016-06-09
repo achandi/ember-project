@@ -1,0 +1,8 @@
+Candy: {{input value=filter key-up=(action 'autoComplete')}} 
+<button {{action 'search'}}>Search</button>
+
+<ul>
+  {{#each filteredList as |candy|}}
+    <li {{action 'choose' candy.title}}>{{candy.title}}</li>
+  {{/each}}
+</ul>
