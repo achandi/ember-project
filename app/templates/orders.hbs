@@ -1,0 +1,12 @@
+<div id="hide">
+{{#candy-listing as |prop|}}
+    {{#each prop.orderList as |candy index|}}
+     <div id="visible">
+      <h2>Order#: {{list-item index}}</h2>
+      <h2>Candy: {{candy.type}} </h2>
+      <h2>Quantity: {{candy.quantity}}</h2>
+      <h2><b>Total: ${{candy.orderTotal}}</b></h2>
+    </div>
+     {{/each}}
+  {{/candy-listing}}
+</div> 

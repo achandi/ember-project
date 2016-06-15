@@ -1,25 +1,56 @@
 <h3> Type: {{candy.title}} </h3>
+
 <h3> price: ${{candy.price}} </h3>
-<h3> description: {{candy.description}} </h3>
-<h3> Likes: {{candy.likes}} </h3>
-<h3> Dislikes: {{candy.dislikes}} </h3>
-<h3> Quantity: {{candy.quantity}} </h3>
-{{input value=quantitySold}}
-<button {{action 'addToCart' quantitySold}}>add to cart</button>
 
-<button {{action 'increaseLike'}}>Like</button>
-<button {{action 'unLike'}}>Unlike</button>
+<button id="toggle" type="button" class="btn btn-default" {{action 'collapseDescription'}}>
+  <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Description
+</button>
 
+{{#if tabIsOne}}
+  <div id="description" class="panel-collapse collapse">
+     <h2>{{candy.description}}</h2>
+  </div>
+{{/if}}
+<br>
+<button id="toggle" type="button" class="btn btn-default" {{action 'collapseRating'}}>
+  <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Rate
+</button>
+
+{{#if tabIsTwo}}
+  <div id="rating" class="panel-collapse collapse">
+      <h3> Likes: {{candy.likes}} </h3>
+      <h3> Dislikes: {{candy.dislikes}} </h3> 
+      <button {{action 'increaseLike'}}>Like</button>
+      <button {{action 'unLike'}}>Unlike</button>
+  </div>
+{{/if}}
+
+<br>
+<button id="toggle" type="button" class="btn btn-default" {{action 'collapseOrderInfo'}}>
+  <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Order Information
+</button>
+
+{{#if tabIsThree}}
+  <div id="orderInfo" class="panel-collapse collapse">
+    <h3> Quantity: {{candy.quantity}} </h3>
+    {{input value=quantitySold}}
+    <button {{action 'addToCart' quantitySold}}>Order Now</button>
+  </div>
+{{/if}}
+
+<br>
 {{#if showImageCover }}
   <div id="outerDiv">
     <div id="innerDiv">
       <p><img src={{candy.cover}}></p>
     </div>
   </div>
-  <button {{action 'hideImage'}}>Hide image</button>
+  <button id="imgButton" {{action 'hideImage'}}>Hide image</button>
 {{else}}
-  <button {{action 'showImage'}}>Show image</button>
+  <button id="imgHide" {{action 'showImage'}}>Show image</button>
 {{/if}}
+
+{{yield this}}
 
 
 

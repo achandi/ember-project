@@ -8,9 +8,9 @@ body {
 
 img {
 
-  border-radius: 50%;
-  height: 130px;
-  width: 130px;
+  border-radius: 60%;
+  height: 120px;
+  width: 120px;
 
 }
 
@@ -22,20 +22,22 @@ body {
   color: white; 
   background-size: cover;
   background-attachment: fixed; 
+
 }
 
 
-
 .list-group-item {
+
   background-color: rgba(0, 0, 0, 0.6);
   border: 1px solid black;
   color: red; 
   background-image: url("https://s-media-cache-ak0.pinimg.com/736x/3a/ea/0a/3aea0a0dc0ff985cf49cecfec5393712.jpg");
   background-position: center;
   background-repeat:no-repeat;
-  background-size: 70%; 
-  text-align: center;
-  margin: 0;
+  background-size: 300px 70%; 
+  text-align: left;
+  opacity:0.85;
+
 }
 
 #search {
@@ -43,26 +45,146 @@ body {
 }
 
 @keyframes circle {
-    from { transform:rotate(0deg); }
-    to { transform:rotate(360deg); }
+  from { transform:rotate(0deg); }
+  to { transform:rotate(360deg); }
 }
 
 @keyframes inner-circle {
-    from { transform:rotate(0deg); }
-    to { transform:rotate(-360deg); }
+  from { transform:rotate(0deg); }
+  to { transform:rotate(-360deg); }
 }
 
 #outerDiv {
-    width:100px;
-    height:100px;
-    margin: 20px auto 0;
-    color:orange;
-    font-size:100px;
-    line-height:1;
-    animation: circle 5s linear infinite;
-    transform-origin:50% 50px;
+  width:20%;
+  height:50%;
+  margin: 20px auto 0;
+  color:orange;
+  font-size:100px;
+  line-height:1;
+  animation: circle 5s linear infinite;
+  transform-origin:50% 50px;
 }
 
 #innerDiv {
-    animation: inner-circle 5s linear infinite;
+  animation: inner-circle 5s linear infinite;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+:before,
+:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+.wrapper {
+    text-align: center;
+    opacity:0.65
+}
+
+.clip-text {
+    font-size: 6em;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    margin: .25em;
+    padding: .5em .75em;
+    text-align: center;
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+    position: absolute;
+    content: '';
+}
+
+.clip-text:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+.clip-text:after {
+    position: absolute;
+    z-index: -1;
+    top: .125em;
+    right: .125em;
+    bottom: .125em;
+    left: .125em;
+    background-color: #000;
+}
+
+
+.clip-text--no-textzone:before {
+    background-position: -.65em 0;
+}
+
+.clip-text--no-textzone:after {
+    content: none;
+}
+
+.clip-text--cover,
+.clip-text--cover:before {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+}
+
+.clip-text_one {
+    background-image: url(http://lorempixel.com/480/200/abstract/7);
+}
+
+
+#about {
+
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: green; 
+  
+}
+
+#aboutTitle {
+  
+  color: red;
+}
+
+#hide{
+
+  visibility: hidden;
+  height: 10%;
+}
+
+#visible {
+
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  color: blue; 
+  text-align: center;
+
+
 }

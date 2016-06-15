@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('bootstrap-init', 'Integration | Component | bootstrap init', {
+moduleForComponent('order-amount', 'Integration | Component | order amount', {
   integration: true
 });
 
@@ -9,15 +9,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{bootstrap-init}}`);
+  this.render(hbs`{{order-amount}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#bootstrap-init}}
+    {{#order-amount}}
       template block text
-    {{/bootstrap-init}}
+    {{/order-amount}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
